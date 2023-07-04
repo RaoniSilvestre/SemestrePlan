@@ -1,19 +1,9 @@
 body{
     padding: 0;
     margin: 0;
-}
-
-p{
+    background-color: rgb(25, 25, 25);
+    color: white;
     font-size: 15px;
-    margin: 0px 0px 20px 0px;
-}
-
-a{
-    font-size: 10px;
-}
-
-i{
-    color: rgba(0, 0, 0, 0.575);
 }
 
 #caixa_de_conteudo{
@@ -25,41 +15,84 @@ i{
     margin-top: 0;
 }
 
-#header{
-    background-color: teal;
-    padding: 20px;
-    color: white
-}
-
-#dados_pessoais{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;    
+.secao{
+    margin-bottom: 50px;
 }
 
 .titulo_de_secao{
-    color: teal;
+    color: white;
     margin: 20px 0px 10px 0px;
     font-size: 22px;
 }
 
-.sobrescrito{
-    color: rgba(0, 0, 0, 0.575);
-    font-size: 10px;
-    margin: 0px 0px 0px 0px;
+.bloco{
+    background-color: rgb(50, 50, 50);
+    padding: 25px;
+    padding-right: 50px;
+    padding-left: 50px;
+    margin: 10px;
+    border-radius: 10px;
 }
 
-.corpo_de_texto{
+.bloco_data{
+    display: flex; 
+    margin-bottom: 15px;
+}
+
+.bloco_cabecalho{
+    margin-bottom: 20px;
+}
+
+.bloco_titulo{
+    font-size: 22px;
+    margin: 0;
+}
+
+.bloco_subtitulo{
+    color: teal;
+    margin: 0;
+}
+
+.bloco_texto{
     font-size: 12px;
-    margin: 0px 0px 0px 0px;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.bloco_dados{
+    display: flex;
+    margin-bottom: 15px;    
+}
+
+.sobrescrito{
+    font-size: 10px;
+    margin: 3px 0px 0px 5px;
+}
+
+.caixa_de_progresso{
+    background-color: rgb(25, 25, 25);
+    width: 100%;
+    height: 25px;
+    margin-bottom: 20px;
+
+    border-radius: 15px;
+}
+
+.progresso{
+    height: 22px;
+    background-color: teal;
+
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-top: 3px;
 }
 
 @media only screen and (min-width: 820px) {
     #caixa_de_conteudo{    
         width: 720px;
     }
-    
-    #dados_pessoais{    
+
+    #header{
         width: 720px;
     }
 }
