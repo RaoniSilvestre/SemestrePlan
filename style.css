@@ -1,0 +1,65 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+p{
+    font-size: 15px;
+    margin: 0px 0px 20px 0px;
+}
+
+a{
+    font-size: 10px;
+}
+
+i{
+    color: rgba(0, 0, 0, 0.575);
+}
+
+#caixa_de_conteudo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 0px 25px 25px 25px;
+    margin-top: 0;
+}
+
+#header{
+    background-color: teal;
+    padding: 20px;
+    color: white
+}
+
+#dados_pessoais{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+.titulo_de_secao{
+    color: teal;
+    margin: 20px 0px 10px 0px;
+    font-size: 22px;
+}
+
+.sobrescrito{
+    color: rgba(0, 0, 0, 0.575);
+    font-size: 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+.corpo_de_texto{
+    font-size: 12px;
+    margin: 0px 0px 0px 0px;
+}
+
+@media only screen and (min-width: 820px) {
+    #caixa_de_conteudo{    
+        width: 720px;
+    }
+    
+    #dados_pessoais{    
+        width: 760px;
+    }
+}
