@@ -67,6 +67,10 @@ function adicionarMateria(e){
         alert('O horário que você digitou não está no formato correto')
         return
     }
+    if (horario.length == 7 && !/^[2-7]{4}[MTN](?:12|34|56)/.test(horario)){
+        alert('O horário que você digitou não está no formato correto')
+        return
+    }
     if (horario.length == 6 && !/^[2-7]{3}[MTN](?:12|34|56)/.test(horario)){
         alert('O horário que você digitou não está no formato correto')
         return
@@ -119,7 +123,7 @@ function adicionarMateria(e){
     }
     
     const node = document.createElement('div')
-    node.innerHTML = (`${abreviacao} - ${nome_da_materia} ${(horario.length == 6) ? '(90h)':''} ${(horario.length == 5) ? '(60h)':''} ${(horario.length == 4) ? '(30h)':''} (${horario})`)
+    node.innerHTML = (`${abreviacao} - ${nome_da_materia} ${(horario.length == 7) ? '(120h)':''} ${(horario.length == 6) ? '(90h)':''} ${(horario.length == 5) ? '(60h)':''} ${(horario.length == 4) ? '(30h)':''} (${horario})`)
     node.classList.add('materia')
     node.setAttribute("onclick", "removerMateria(event)");
     document.getElementById('legenda').appendChild(node)
