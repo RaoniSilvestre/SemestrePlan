@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="popular_tabela()" id="body">
+
+    <form onsubmit="adicionarMateria(event)">
+        <label>Nome da matéria</label> <br>
+        <input type="text" id="nome_da_materia" placeholder="Tópicos Específicos em Exemplos"> <br>
+
+        <label>Horário</label> <br>
+        <input type="text" id="horario" maxlength="6" placeholder="23M12"> <br>
+
+        <button type="submit"> Adicionar </button>
+    </form>
+
+    <table>
+        <tr class="tabela_m">
+            <td> SEGUNDA </td>
+            <td> TERÇA </td>
+            <td> QUARTA </td>
+            <td> QUINTA </td>
+            <td> SEXTA</td>
+            <td> SÁBADO </td>
+        </tr>
+    </table>
+
+    <table id="tabela_de_horarios">
+        <tr class="tabela_m">
+            <td id="2M12"> </td>
+            <td id="3M12"> </td>
+            <td id="4M12"> </td>
+            <td id="5M12"> </td>
+            <td id="6M12"> </td>
+            <td id="7M12"> </td>
+        </tr>
+        <tr class="tabela_m">
+            <td id="2M34"> </td>
+            <td id="3M34"> </td>
+            <td id="4M34"> </td>
+            <td id="5M34"> </td>
+            <td id="6M34"> </td>
+            <td id="7M34"> </td>
+        </tr>
+        <tr class="tabela_m">
+            <td id="2M56"> </td>
+            <td id="3M56"> </td>
+            <td id="4M56"> </td>
+            <td id="5M56"> </td>
+            <td id="6M56"> </td>
+            <td id="7M56"> </td>
+        </tr>
+        <tr class="tabela_t">
+            <td id="2T12"> </td>
+            <td id="3T12"> </td>
+            <td id="4T12"> </td>
+            <td id="5T12"> </td>
+            <td id="6T12"> </td>
+            <td id="7T12"> </td>
+        </tr>
+        <tr class="tabela_t">
+            <td id="2T34"> </td>
+            <td id="3T34"> </td>
+            <td id="4T34"> </td>
+            <td id="5T34"> </td>
+            <td id="6T34"> </td>
+            <td id="7T34"> </td>
+        </tr>
+        <tr class="tabela_t">
+            <td id="2T56"> </td>
+            <td id="3T56"> </td>
+            <td id="4T56"> </td>
+            <td id="5T56"> </td>
+            <td id="6T56"> </td>
+            <td id="7T56"> </td>
+        </tr>
+        <tr class="tabela_n">
+            <td id="2N12"> </td>
+            <td id="3N12"> </td>
+            <td id="4N12"> </td>
+            <td id="5N12"> </td>
+            <td id="6N12"> </td>
+            <td id="7N12"> </td>
+        </tr>
+        <tr class="tabela_n">
+            <td id="2N34"> </td>
+            <td id="3N34"> </td>
+            <td id="4N34"> </td>
+            <td id="5N34"> </td>
+            <td id="6N34"> </td>
+            <td id="7N34"> </td>
+        </tr>
+    </table>
+
+    <div class="legenda" id="legenda">
+
+    </div>
+</body>
+</html>
