@@ -11,16 +11,6 @@ body{
 
     margin: 0;
     padding: 0;
-
-    
-    background-color: #e5e5f7;
-    opacity: 1;
-
-    background-image: 
-    radial-gradient(#bababa 1.6px, 
-    #e5e5f7 1.6px);
-
-    background-size: 40px 40px;
 }
 
 .caixa_de_conteudo{
@@ -33,7 +23,6 @@ body{
     border-width: 2px;
     border-style: solid;
     border-color: rgb(80, 80, 80);
-    border-radius: 10px;
 
     padding: 0px 25px 25px 25px;
     margin-top: 0;
@@ -94,6 +83,7 @@ input{
 
 button{    
     background-color: white;
+    color: rgb(80, 80, 80);
 
     height: 30px;   
     font-size: 20px;
@@ -149,8 +139,47 @@ button:hover{
     position: sticky;
 }
 
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 710px) {
+    body{ 
+        background-color: #e5e5f7;
+        opacity: 1;
+
+        background-image: 
+        radial-gradient(#bababa 1.6px, 
+        #e5e5f7 1.6px);
+
+        background-size: 40px 40px;
+    }
+
     .caixa_de_conteudo{
         width: 650px;
+
+        border-radius: 10px;
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    body{
+        background-color: rgb(220, 255, 220);
+    }
+    .caixa_de_conteudo{
+        border-style: none;
+    }
+    table{
+        min-width: 100%;
+        max-width: 100%;
+        
+        text-align: center;
+        overflow: hidden;
+        user-select: none;
+    }
+    table > tbody > tr > td{
+        min-width: auto;
+        max-width: auto;
+        font-size: 3vw;
+        
+        text-align: center;
+        overflow: hidden;
+        user-select: none;
     }
 }
