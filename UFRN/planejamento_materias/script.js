@@ -12,8 +12,9 @@ function popular_tabela(){
     }
 
     const saved = localStorage.getItem('saved').split(',')
+
     for (item of saved){
-        const abreviacao = item.split("")[0]
+        const abreviacao = item.split(" ")[0]
         const horario = item.split("(")[2].substring(0, item.split("(")[2].length - 1)
         
         const horario_periodos = horario.substring(horario.length - 3)
@@ -62,6 +63,10 @@ function adicionarMateria(e){
 
     const horario = document.getElementById('horario').value.toUpperCase()
 
+    if  (horario.length < 4) {
+        alert('O horário que você digitou não está no formato correto')
+        return
+    }
     if (horario.length == 6 && !/^[2-7]{3}[MTN](?:12|34|56)/.test(horario)){
         alert('O horário que você digitou não está no formato correto')
         return
