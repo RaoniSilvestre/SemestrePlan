@@ -182,4 +182,7 @@ button:hover{
         overflow: hidden;
         user-select: none;
     }
+    .legenda{
+        font-size: 3vw;
+    }
 }
