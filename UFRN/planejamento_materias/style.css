@@ -99,6 +99,8 @@ button{
 button:hover{
     color:  white;
     background-color: rgb(80, 80, 80);
+
+    cursor: pointer;
 }
 
 .caixa_de_tabela{
@@ -123,7 +125,7 @@ button:hover{
     background-color: rgb(80, 80, 80);
 }
 
-.legenda{
+.legenda_materias{
     background-color: white;
 
     display: block;
@@ -135,6 +137,7 @@ button:hover{
     border-style: solid;
     border-color: rgb(80, 80, 80);
     border-radius: 10px;
+    font-size: 18px;
 
     position: sticky;
 }
@@ -182,7 +185,7 @@ button:hover{
         overflow: hidden;
         user-select: none;
     }
-    .legenda{
+    .legenda_materias{
         font-size: 3vw;
     }
 }

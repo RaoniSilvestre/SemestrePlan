@@ -140,3 +140,52 @@ function adicionarMateria(e){
 
     localStorage.setItem('saved', saved)
 }
+
+function toggleHorarios(e){
+    const tabela = document.getElementById('tabela_de_horarios')
+
+    if (e.target.innerHTML == 'Mostrar horário de início'){
+        e.target.innerHTML = 'Mostrar formato padrão'
+        
+        for (tr of tabela.children[0].children){
+            for (td of tr.children){
+                if (td.innerHTML.includes('M12')){
+                    td.innerHTML = '7:00'
+                }
+                if (td.innerHTML.includes('M34')){
+                    td.innerHTML = '8:55'
+                }
+                if (td.innerHTML.includes('M56')){
+                    td.innerHTML = '10:50'
+                }
+                if (td.innerHTML.includes('T12')){
+                    td.innerHTML = '13:00'
+                }
+                if (td.innerHTML.includes('T34')){
+                    td.innerHTML = '14:55'
+                }
+                if (td.innerHTML.includes('T56')){
+                    td.innerHTML = '16:50'
+                }
+                if (td.innerHTML.includes('N12')){
+                    td.innerHTML = '18:45'
+                }
+                if (td.innerHTML.includes('N34')){
+                    td.innerHTML = '20:35'
+                }
+            }
+        }
+        return
+    }
+
+    if (e.target.innerHTML == 'Mostrar formato padrão'){
+        e.target.innerHTML = 'Mostrar horário de início'
+
+        for (tr of tabela.children[0].children){
+            for (td of tr.children){
+                td.innerHTML = td.id
+            }
+        }
+        return
+    }    
+}
