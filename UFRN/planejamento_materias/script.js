@@ -67,19 +67,19 @@ function adicionarMateria(e){
         alert('O horário que você digitou não está no formato correto')
         return
     }
-    if (horario.length == 7 && !/^[2-7]{4}[MTN](?:12|34|56)/.test(horario)){
+    if (horario.length == 7 && !/^[2-6]{4}[MTN](?:12|34|56)/.test(horario)){
         alert('O horário que você digitou não está no formato correto')
         return
     }
-    if (horario.length == 6 && !/^[2-7]{3}[MTN](?:12|34|56)/.test(horario)){
+    if (horario.length == 6 && !/^[2-6]{3}[MTN](?:12|34|56)/.test(horario)){
         alert('O horário que você digitou não está no formato correto')
         return
     }
-    if (horario.length == 5 && !/^[2-7]{2}[MTN](?:12|34|56)/.test(horario)){
+    if (horario.length == 5 && !/^[2-6]{2}[MTN](?:12|34|56)/.test(horario)){
         alert('O horário que você digitou não está no formato correto')
         return
     }
-    if (horario.length == 4 && !/^[2-7]{1}[MTN](?:12|34|56)/.test(horario)){
+    if (horario.length == 4 && !/^[2-6]{1}[MTN](?:12|34|56)/.test(horario)){
         alert('O horário que você digitou não está no formato correto')
         return
     }
