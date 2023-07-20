@@ -144,17 +144,21 @@ function adicionarMateria(e){
 }
 
 function downloadCanvas() {
+
+    // Get the original div that you want to convert
     const divElement = document.getElementsByClassName('caixa_de_tabela')[0]
 
     html2canvas(divElement, {
+        // width:1366,
+        // height:661,
         windowWidth: 1366,
         windowHeight: 661,
-        scale:1,
+        scale:2,
         backgroundColor:'rgb(220, 255, 220)'
         }).then(function (canvas) {
-        const aspectRatio = divElement.offsetWidth / divElement.offsetHeight
-        const canvasWidth = 1366
-        const canvasHeight = 1366
+        const aspectRatio = 1366 / 661
+        const canvasWidth = 650
+        const canvasHeight = 650
 
         const resizedCanvas = document.createElement('canvas')
         resizedCanvas.width = canvasWidth
