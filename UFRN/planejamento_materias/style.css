@@ -39,25 +39,15 @@ table{
     border-style: solid;
     border-color: rgb(80, 80, 80);
     border-radius: 10px;
-
-    min-width: 100%;
-    max-width: 100%;
 }
 
 table > tbody > tr > td{
-    min-width: auto;
-    max-width: auto;
+    min-width: 100px;
+    max-width: 100px;
     
     text-align: center;
     overflow: hidden;
     user-select: none;
-}
-
-.tabela_legenda{
-    background-color: white;
-    max-width: 25px;
-
-    font-size: 15px;
 }
 
 .tabela_m{
@@ -191,9 +181,6 @@ button:hover{
         text-align: center;
         overflow: hidden;
         user-select: none;
-    }
-    .tabela_legenda{
-        font-size: 2.5vw;
     }
     .legenda{
         font-size: 3vw;
