@@ -1,3 +1,5 @@
+console.log(window.innerHeight, window.innerWidth)
+
 function popular_tabela(){
     const tabela = document.getElementById('tabela_de_horarios')
 
@@ -144,10 +146,15 @@ function adicionarMateria(e){
 function downloadCanvas() {
     const divElement = document.getElementsByClassName('caixa_de_tabela')[0]
 
-    html2canvas(divElement).then(function (canvas) {
+    html2canvas(divElement, {
+        windowWidth: 1366,
+        windowHeight: 661,
+        scale:1,
+        backgroundColor:'rgb(220, 255, 220)'
+        }).then(function (canvas) {
         const aspectRatio = divElement.offsetWidth / divElement.offsetHeight
-        const canvasWidth = 2500
-        const canvasHeight = 2500
+        const canvasWidth = 1366
+        const canvasHeight = 1366
 
         const resizedCanvas = document.createElement('canvas')
         resizedCanvas.width = canvasWidth
