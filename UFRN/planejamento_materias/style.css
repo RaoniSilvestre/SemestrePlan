@@ -34,6 +34,7 @@ table{
     background-color: white;
 
     padding: 10px;
+    width: 100%;
 
     border-width: 2px;
     border-style: solid;
@@ -103,7 +104,8 @@ button:hover{
 
 .caixa_de_tabela{
     border-radius: 10px;
-    
+
+    background-color: rgb(220, 255, 220);
     overflow-x: auto;
     overflow-y: hidden;
 }

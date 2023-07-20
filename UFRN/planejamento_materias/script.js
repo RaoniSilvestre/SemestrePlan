@@ -140,3 +140,50 @@ function adicionarMateria(e){
 
     localStorage.setItem('saved', saved)
 }
+
+function downloadCanvas() {
+    const divElement = document.getElementsByClassName('caixa_de_tabela')[0]
+
+    html2canvas(divElement).then(function (canvas) {
+        const aspectRatio = divElement.offsetWidth / divElement.offsetHeight
+        const canvasWidth = 2500
+        const canvasHeight = 2500
+
+        const resizedCanvas = document.createElement('canvas')
+        resizedCanvas.width = canvasWidth
+        resizedCanvas.height = canvasHeight
+
+        const ctx = resizedCanvas.getContext('2d')
+
+        let offset = 20
+        let drawWidth = canvasWidth - 2 * offset
+        let drawHeight = canvasHeight - 2 * offset
+        let offsetX = offset
+        let offsetY = offset
+
+        if (aspectRatio > 1) {
+            drawHeight = canvasWidth / aspectRatio
+            offsetY = (canvasHeight - drawHeight) / 2
+        } else if (aspectRatio < 1) {
+            drawWidth = canvasHeight * aspectRatio
+            offsetX = (canvasWidth - drawWidth) / 2
+        }
+
+        ctx.fillStyle = 'rgb(220, 255, 220)'
+        ctx.fillRect(0, 0, canvasWidth, canvasHeight)
+
+        ctx.drawImage(canvas, 0, 0, canvas.width, canvas.height, offsetX, offsetY, drawWidth, drawHeight)
+
+        const dataURL = resizedCanvas.toDataURL('image/png')
+
+        const downloadLink = document.createElement('a')
+        downloadLink.href = dataURL
+
+        downloadLink.download = 'meu_horario.png'
+
+        document.body.appendChild(downloadLink)
+        downloadLink.click()
+
+        document.body.removeChild(downloadLink)
+    });
+}
