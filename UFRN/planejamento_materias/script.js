@@ -156,13 +156,19 @@ function downloadCanvas() {
         scale:2,
         backgroundColor:'rgb(220, 255, 220)'
         }).then(function (canvas) {
-        const aspectRatio = 1366 / 661
+        const aspectRatio = parseInt(canvas.style.width) / parseInt(canvas.style.height)
         const canvasWidth = 650
-        const canvasHeight = 650
+        const canvasHeight = 650    
 
         const resizedCanvas = document.createElement('canvas')
+
         resizedCanvas.width = canvasWidth
         resizedCanvas.height = canvasHeight
+
+        if (canvas.style.height > 650){
+            resizedCanvas.width = canvas.style.height
+            resizedCanvas.height = canvas.style.height
+        }
 
         const ctx = resizedCanvas.getContext('2d')
 
