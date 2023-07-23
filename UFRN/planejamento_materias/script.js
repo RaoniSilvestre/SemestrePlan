@@ -1,28 +1,28 @@
 console.log(window.innerHeight, window.innerWidth)
 
-function popular_tabela(){
+function popular_tabela() {
     const tabela = document.getElementById('tabela_de_horarios')
 
-    for (tr of tabela.children[0].children){
-        for (td of tr.children){
+    for (tr of tabela.children[0].children) {
+        for (td of tr.children) {
             td.innerHTML = td.id
         }
     }
 
-    if (!localStorage.getItem('saved')){
+    if (!localStorage.getItem('saved')) {
         return
     }
 
     const saved = localStorage.getItem('saved').split(',')
 
-    for (item of saved){
+    for (item of saved) {
         const abreviacao = item.split(" ")[0]
         const horario = item.split("(")[2].substring(0, item.split("(")[2].length - 1)
-        
-        const horario_periodos = horario.substring(horario.length - 3)
-        const horario_dias = horario.substring(0, horario.length - 3).split('')  
 
-        for (i in horario_dias){
+        const horario_periodos = horario.substring(horario.length - 3)
+        const horario_dias = horario.substring(0, horario.length - 3).split('')
+
+        for (i in horario_dias) {
             document.getElementById(horario_dias[i] + horario_periodos).style.backgroundColor = 'rgb(180,180,180)'
             document.getElementById(horario_dias[i] + horario_periodos).innerHTML = abreviacao
         }
@@ -33,16 +33,16 @@ function popular_tabela(){
         node.setAttribute("onclick", "removerMateria(event)");
         document.getElementById('legenda').appendChild(node)
     }
-    
+
 }
 
-function removerMateria(e){
-    const target = e.target 
+function removerMateria(e) {
+    const target = e.target
     const horario = target.innerHTML.split("(")[2].substring(0, target.innerHTML.split("(")[2].length - 1)
     const horario_periodos = horario.substring(horario.length - 3)
     const horario_dias = horario.substring(0, horario.length - 3).split('')
 
-    for (i in horario_dias){
+    for (i in horario_dias) {
         const elemento = document.getElementById(horario_dias[i] + horario_periodos)
         elemento.style.backgroundColor = "initial"
         elemento.innerHTML = elemento.id
@@ -53,49 +53,49 @@ function removerMateria(e){
     const saved = []
     const legenda = document.getElementById('legenda')
 
-    for (item of legenda.children){
+    for (item of legenda.children) {
         saved.push(item.innerHTML)
     }
 
     localStorage.setItem('saved', saved)
 }
 
-function adicionarMateria(e){
+function adicionarMateria(e) {
     e.preventDefault();
 
     const horario = document.getElementById('horario').value.toUpperCase()
 
-    if  (horario.length < 4) {
+    if (horario.length < 4) {
         alert('O horário que você digitou não está no formato correto')
         return
     }
-    if (horario.length == 7 && !/^[2-7]{4}[MTN](?:12|34|56)/.test(horario)){
+    if (horario.length == 7 && !/^[2-7]{4}[MTN](?:12|34|56)/.test(horario)) {
         alert('O horário que você digitou não está no formato correto')
         return
     }
-    if (horario.length == 6 && !/^[2-7]{3}[MTN](?:12|34|56)/.test(horario)){
+    if (horario.length == 6 && !/^[2-7]{3}[MTN](?:12|34|56)/.test(horario)) {
         alert('O horário que você digitou não está no formato correto')
         return
     }
-    if (horario.length == 5 && !/^[2-7]{2}[MTN](?:12|34|56)/.test(horario)){
+    if (horario.length == 5 && !/^[2-7]{2}[MTN](?:12|34|56)/.test(horario)) {
         alert('O horário que você digitou não está no formato correto')
         return
     }
-    if (horario.length == 4 && !/^[2-7]{1}[MTN](?:12|34|56)/.test(horario)){
+    if (horario.length == 4 && !/^[2-7]{1}[MTN](?:12|34|56)/.test(horario)) {
         alert('O horário que você digitou não está no formato correto')
         return
     }
-    if (/^.*N56.*$/.test(horario)){
+    if (/^.*N56.*$/.test(horario)) {
         alert('O horário que você digitou não está no formato correto')
         return
     }
 
     const horario_periodos = horario.substring(horario.length - 3)
-    const horario_dias = horario.substring(0, horario.length - 3).split('')   
+    const horario_dias = horario.substring(0, horario.length - 3).split('')
 
-    for (i in horario_dias){
+    for (i in horario_dias) {
         const elemento = document.getElementById(horario_dias[i] + horario_periodos)
-        if (elemento.innerHTML != elemento.id){
+        if (elemento.innerHTML != elemento.id) {
             alert('Existe conflito de horário com a matéria que você está tentando adicionar e ' + elemento.innerHTML)
             return
         }
@@ -103,40 +103,40 @@ function adicionarMateria(e){
 
     const nome_da_materia = document.getElementById('nome_da_materia').value.toUpperCase().replace(/[^A-Za-z0-9 çÇÁÀÂÃÉÈÊÍÏÓÔÕÖÚÜ\s]/g, '') || "Matéria"
     let abreviacao = ""
-    
-    for (palavra of nome_da_materia.split(' ')){
+
+    for (palavra of nome_da_materia.split(' ')) {
         if (
             palavra != "A" && palavra != "EM" && palavra != "PARA" && palavra != "DE" && palavra != "COM"
             && palavra != "DA" && palavra != "DO" && palavra != "O" && palavra != "ÀS" && palavra != "AOS"
             && palavra != "AO" && palavra != "À"
             && palavra != "DAS" && palavra != "DOS" && palavra != "AS" && palavra != "OS" && palavra != "E"
             && palavra != "I" && palavra != "II" && palavra != "III" && palavra != "IV" && palavra != "V"
-            ){
+        ) {
             abreviacao = abreviacao + palavra[0]
         }
-        if (palavra == "I" || palavra == "II" || palavra == "III" || palavra == "IV" || palavra == "V"){
+        if (palavra == "I" || palavra == "II" || palavra == "III" || palavra == "IV" || palavra == "V") {
             abreviacao = abreviacao + palavra
         }
     }
 
-    for (i in horario_dias){
+    for (i in horario_dias) {
         document.getElementById(horario_dias[i] + horario_periodos).style.backgroundColor = 'rgb(180,180,180)'
         document.getElementById(horario_dias[i] + horario_periodos).innerHTML = abreviacao
     }
-    
+
     const node = document.createElement('div')
-    node.innerHTML = (`${abreviacao} - ${nome_da_materia} ${(horario.length == 7) ? '(120h)':''} ${(horario.length == 6) ? '(90h)':''} ${(horario.length == 5) ? '(60h)':''} ${(horario.length == 4) ? '(30h)':''} (${horario})`)
+    node.innerHTML = (`${abreviacao} - ${nome_da_materia} ${(horario.length == 7) ? '(120h)' : ''} ${(horario.length == 6) ? '(90h)' : ''} ${(horario.length == 5) ? '(60h)' : ''} ${(horario.length == 4) ? '(30h)' : ''} (${horario})`)
     node.classList.add('materia')
     node.setAttribute("onclick", "removerMateria(event)");
     document.getElementById('legenda').appendChild(node)
-    
+
     document.getElementById('nome_da_materia').value = ""
     document.getElementById('horario').value = ""
 
     const saved = []
     const legenda = document.getElementById('legenda')
 
-    for (item of legenda.children){
+    for (item of legenda.children) {
         saved.push(item.innerHTML)
     }
 
@@ -144,28 +144,24 @@ function adicionarMateria(e){
 }
 
 function downloadCanvas() {
-
-    // Get the original div that you want to convert
     const divElement = document.getElementsByClassName('caixa_de_tabela')[0]
 
     html2canvas(divElement, {
-        // width:1366,
-        // height:661,
         windowWidth: 1366,
         windowHeight: 661,
-        scale:2,
-        backgroundColor:'rgb(220, 255, 220)'
-        }).then(function (canvas) {
+        scale: 2,
+        backgroundColor: 'rgb(220, 255, 220)'
+    }).then(function (canvas) {
         const aspectRatio = parseInt(canvas.style.width) / parseInt(canvas.style.height)
         const canvasWidth = 650
-        const canvasHeight = 650    
+        const canvasHeight = 650
 
         const resizedCanvas = document.createElement('canvas')
 
         resizedCanvas.width = canvasWidth
         resizedCanvas.height = canvasHeight
 
-        if (canvas.style.height > 650){
+        if (canvas.style.height > 650) {
             resizedCanvas.width = canvas.style.height
             resizedCanvas.height = canvas.style.height
         }
@@ -173,21 +169,21 @@ function downloadCanvas() {
         const ctx = resizedCanvas.getContext('2d')
 
         let offset = 20
-        let drawWidth = canvasWidth - 2 * offset
-        let drawHeight = canvasHeight - 2 * offset
+        let drawWidth = resizedCanvas.width - 2 * offset
+        let drawHeight = resizedCanvas.height - 2 * offset
         let offsetX = offset
         let offsetY = offset
 
         if (aspectRatio > 1) {
-            drawHeight = canvasWidth / aspectRatio
-            offsetY = (canvasHeight - drawHeight) / 2
+            drawHeight = resizedCanvas.width / aspectRatio
+            offsetY = (resizedCanvas.height - drawHeight) / 2
         } else if (aspectRatio < 1) {
-            drawWidth = canvasHeight * aspectRatio
-            offsetX = (canvasWidth - drawWidth) / 2
+            drawWidth = resizedCanvas.height * aspectRatio
+            offsetX = (resizedCanvas.width - drawWidth) / 2
         }
 
         ctx.fillStyle = 'rgb(220, 255, 220)'
-        ctx.fillRect(0, 0, canvasWidth, canvasHeight)
+        ctx.fillRect(0, 0, resizedCanvas.width, resizedCanvas.height)
 
         ctx.drawImage(canvas, 0, 0, canvas.width, canvas.height, offsetX, offsetY, drawWidth, drawHeight)
 
