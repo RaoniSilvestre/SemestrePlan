@@ -1,5 +1,3 @@
-console.log(window.innerHeight, window.innerWidth)
-
 function popular_tabela() {
     const tabela = document.getElementById('tabela_de_horarios')
 
@@ -108,9 +106,9 @@ function adicionarMateria(e) {
         if (
             palavra != "A" && palavra != "EM" && palavra != "PARA" && palavra != "DE" && palavra != "COM"
             && palavra != "DA" && palavra != "DO" && palavra != "O" && palavra != "ÀS" && palavra != "AOS"
-            && palavra != "AO" && palavra != "À"
             && palavra != "DAS" && palavra != "DOS" && palavra != "AS" && palavra != "OS" && palavra != "E"
             && palavra != "I" && palavra != "II" && palavra != "III" && palavra != "IV" && palavra != "V"
+            && palavra != "AO" && palavra != "À"
         ) {
             abreviacao = abreviacao + palavra[0]
         }
@@ -144,6 +142,10 @@ function adicionarMateria(e) {
 }
 
 function downloadCanvas() {
+    if (window.confirm('Fazer download?') == false) {
+        return
+    }
+
     const divElement = document.getElementsByClassName('caixa_de_tabela')[0]
 
     html2canvas(divElement, {

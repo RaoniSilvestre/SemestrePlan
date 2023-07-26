@@ -1,11 +1,11 @@
-html{
+html {
     margin: 0;
     padding: 0;
 
     color: rgb(80, 80, 80);
 }
 
-body{
+body {
     font-size: 20px;
     font-family: Verdana;
 
@@ -13,7 +13,7 @@ body{
     padding: 0;
 }
 
-.caixa_de_conteudo{
+.caixa_de_conteudo {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -30,7 +30,7 @@ body{
     background-color: rgb(220, 255, 220);
 }
 
-table{
+table {
     background-color: white;
 
     padding: 10px;
@@ -42,36 +42,36 @@ table{
     border-radius: 10px;
 }
 
-table > tbody > tr > td{
+table>tbody>tr>td {
     min-width: 100px;
     max-width: 100px;
-    
+
     text-align: center;
     overflow: hidden;
     user-select: none;
 }
 
-.tabela_m{
+.tabela_m {
     background-color: rgb(255, 200, 200);
 }
 
-.tabela_t{
+.tabela_t {
     background-color: rgb(200, 200, 255);
 }
 
-.tabela_n{
+.tabela_n {
     background-color: rgb(200, 255, 200);
 }
 
-form{
+form {
     margin-top: 10px;
     padding: 10px 10px 20px 0px;
 }
 
-input{
+input {
     margin-bottom: 15px;
     padding-left: 10px;
-    
+
     width: 100%;
     height: 30px;
     font-size: 20px;
@@ -82,11 +82,11 @@ input{
     border-radius: 10px;
 }
 
-button{    
+button {
     background-color: white;
     color: rgb(80, 80, 80);
 
-    height: 30px;   
+    height: 30px;
     font-size: 20px;
     padding-left: 20px;
     padding-right: 20px;
@@ -97,12 +97,12 @@ button{
     border-radius: 10px;
 }
 
-button:hover{
-    color:  white;
+button:hover {
+    color: white;
     background-color: rgb(80, 80, 80);
 }
 
-.caixa_de_tabela{
+.caixa_de_tabela {
     border-radius: 10px;
 
     background-color: rgb(220, 255, 220);
@@ -110,7 +110,7 @@ button:hover{
     overflow-y: hidden;
 }
 
-.materia{
+.materia {
     background-color: transparent;
     border-width: 0px;
     border-radius: 10px;
@@ -120,12 +120,12 @@ button:hover{
     cursor: pointer;
 }
 
-.materia:hover{
-    color:  white;
+.materia:hover {
+    color: white;
     background-color: rgb(80, 80, 80);
 }
 
-.legenda{
+.legenda {
     background-color: white;
 
     display: block;
@@ -142,18 +142,18 @@ button:hover{
 }
 
 @media only screen and (min-width: 710px) {
-    body{ 
+    body {
         background-color: #e5e5f7;
         opacity: 1;
 
-        background-image: 
-        radial-gradient(#bababa 1.6px, 
-        #e5e5f7 1.6px);
+        background-image:
+            radial-gradient(#bababa 1.6px,
+                #e5e5f7 1.6px);
 
         background-size: 40px 40px;
     }
 
-    .caixa_de_conteudo{
+    .caixa_de_conteudo {
         width: 650px;
 
         border-radius: 10px;
@@ -161,30 +161,41 @@ button:hover{
 }
 
 @media only screen and (max-width: 710px) {
-    body{
+    body {
         background-color: rgb(220, 255, 220);
     }
-    .caixa_de_conteudo{
+
+    .caixa_de_conteudo {
         border-style: none;
     }
-    table{
+
+    button {
+        display: block;
+        margin-bottom: 5px;
+        width: 100%;
+        height: 30px;
+    }
+
+    table {
         min-width: 100%;
         max-width: 100%;
-        
+
         text-align: center;
         overflow: hidden;
         user-select: none;
     }
-    table > tbody > tr > td{
+
+    table>tbody>tr>td {
         min-width: auto;
         max-width: auto;
         font-size: 3vw;
-        
+
         text-align: center;
         overflow: hidden;
         user-select: none;
     }
-    .legenda{
+
+    .legenda {
         font-size: 3vw;
     }
 }

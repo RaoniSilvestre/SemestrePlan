@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,21 +9,22 @@
     <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body onload="popular_tabela()" id="body">
     <div class="caixa_de_conteudo">
         <form onsubmit="adicionarMateria(event)">
             <label>Nome da matéria</label> <br>
-            <input type="text" id="nome_da_materia" placeholder="Tópicos Específicos em Exemplos" autocomplete="off"> <br>
+            <input type="text" id="nome_da_materia" placeholder="Tópicos Específicos em Exemplos" autocomplete="off">
+            <br>
 
             <label>Horário</label> <br>
             <input type="text" id="horario" maxlength="7" placeholder="234M12" autocomplete="off"> <br>
 
             <button type="submit"> Adicionar </button>
-            <button type="reset"> reset </button>
             <button type="button" onclick="downloadCanvas()">Baixar como imagem</button>
         </form>
 
-        <section class="caixa_de_tabela">    
+        <section class="caixa_de_tabela">
             <table id="tabela_de_horarios">
                 <tr>
                     <td id="SEG"></td>
@@ -97,9 +99,10 @@
                     <td id="7N34"> </td>
                 </tr>
             </table>
-                
+
             <div class="legenda" id="legenda"></div>
         </section>
     </div>
 </body>
+
 </html>
