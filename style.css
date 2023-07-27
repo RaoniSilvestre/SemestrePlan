@@ -1,0 +1,131 @@
+html {
+    margin: 0;
+    padding: 0;
+
+    color: rgb(80, 80, 80);
+}
+
+body {
+    font-size: 20px;
+    font-family: Verdana;
+
+    margin: 0;
+    padding: 0;
+}
+
+.caixa_de_conteudo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    height: 100%;
+
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(80, 80, 80);
+
+    padding: 0px 25px 25px 25px;
+    margin-top: 0;
+
+    background-color: rgb(220, 255, 220);
+}
+
+.cabecalho_de_secao{
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.secao {
+    background-color: white;
+
+    display: block;
+    padding: 10px;
+
+    border-top-width: 0px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(80, 80, 80);
+    border-radius: 10px;
+}
+
+.item {
+    color: inherit;
+
+    background-color: transparent;
+    border-width: 0px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding: 5px;
+
+    cursor: pointer;
+}
+
+.item:hover {
+    color: white;
+    background-color: rgb(80, 80, 80);
+}
+
+.subitem{
+    display:none;
+}
+
+button {
+    background-color: white;
+    color: rgb(80, 80, 80);
+
+    height: 30px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(80, 80, 80);
+    border-radius: 10px;
+}
+
+button:hover {
+    color: white;
+    background-color: rgb(80, 80, 80);
+}
+
+@media only screen and (min-width: 710px) {
+    body {
+        background-color: #e5e5f7;
+        opacity: 1;
+
+        background-image:
+            radial-gradient(#bababa 1.6px,
+                #e5e5f7 1.6px);
+
+        background-size: 40px 40px;
+    }
+
+    .caixa_de_conteudo {
+        width: 650px;
+
+        border-radius: 10px;
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    body {
+        background-color: rgb(220, 255, 220);
+    }
+
+    .caixa_de_conteudo {
+        border-style: none;
+    }
+
+    .cabecalho_de_secao , .secao{
+        text-align: center;
+    }
+
+    button {
+        display: block;
+        margin-bottom: 5px;
+        width: 100%;
+        height: 30px;
+    }
+}
