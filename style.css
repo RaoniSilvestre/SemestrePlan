@@ -10,21 +10,21 @@ body {
 
 .caixa_de_conteudo {
     display: flex;
-    flex-direction: row; /* Alinha os elementos horizontalmente */
-    justify-content: space-around; /* Adiciona espaço ao redor dos elementos */
+    flex-direction: row; 
+    justify-content: space-around; 
     align-items: start;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: 80%; /* Aumenta a largura da caixa de conteúdo */
-    max-width: 1200px; /* Aumenta a largura máxima */
+    width: 80%; 
+    max-width: 1200px; 
 }
 
 form {
     display: flex;
     flex-direction: column;
-    margin-right: 20px; /* Adiciona margem à direita do formulário */
+    margin-right: 20px; 
 }
 
 form label {
