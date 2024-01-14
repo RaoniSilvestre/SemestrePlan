@@ -8,23 +8,29 @@ function downloadCanvas() {
   html2canvas(divElement, {
     windowWidth: 1366,
     windowHeight: 661,
-    scale: 2,
+    scale: 3,
     backgroundColor: 'rgb(220, 255, 220)',
   }).then(function (canvas) {
     const aspectRatio =
       parseInt(canvas.style.width) / parseInt(canvas.style.height)
-    const canvasWidth = 650
-    const canvasHeight = 650
+    const maxWidth = 1000
+    const maxHeight = 1000
+
+    let canvasWidth, canvasHeight
+
+    if (aspectRatio > 1) {
+      // Se a imagem for mais larga do que alta
+      canvasWidth = maxWidth
+      canvasHeight = maxWidth / aspectRatio
+    } else {
+      // Se a imagem for mais alta do que larga
+      canvasHeight = maxHeight
+      canvasWidth = maxHeight * aspectRatio
+    }
 
     const resizedCanvas = document.createElement('canvas')
-
     resizedCanvas.width = canvasWidth
     resizedCanvas.height = canvasHeight
-
-    if (canvas.style.height > 650) {
-      resizedCanvas.width = canvas.style.height
-      resizedCanvas.height = canvas.style.height
-    }
 
     const ctx = resizedCanvas.getContext('2d')
 
