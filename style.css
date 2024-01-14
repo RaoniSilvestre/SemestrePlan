@@ -4,7 +4,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f5f5f5;
+    background-color:rgba(0, 123, 255,0.2);
     font-family: Arial, sans-serif;
 }
 
@@ -21,78 +21,87 @@ body {
     max-width: 1200px; 
 }
 
+
+
+
 form {
-    display: flex;
-    flex-direction: column;
-    margin-right: 20px; 
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px; 
 }
 
 form label {
-    font-weight: bold;
-    margin-bottom: 5px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 form input {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
 }
 
 form button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007BFF;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
 }
 
 form button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .caixa_de_tabela {
-    margin-top: 20px;
-    width: 100%;
-    overflow-x: auto;
+  margin-top: 20px;
+  width: 100%;
+  overflow-x: auto;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 table, th, td {
-    border: 1px solid #007BFF;
-    text-align: center;
+  border: 1px solid #007BFF;
+  text-align: center;
 }
 
 table th, table td {
-    padding: 10px;
+  padding: 10px;
 }
 
 .legenda {
-    margin-top: 20px;
-    padding: 7px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    width: 98%;
-    max-width: 100%;
-    text-align: center;
+  margin-top: 20px;
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 98%;
+  max-width: 100%;
+  text-align: center;
 }
 
 #legenda > div {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #007BFF;
-    margin-bottom: 10px;
-    transition: background-color 0.3s ease;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #007BFF;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
 }
 
 #legenda > div:hover {
-    background-color: #007BFF;
-    color: #fff;
+  background-color: #007BFF;
+  color: #fff;
 }
+
+#divHoras {
+  margin-top: 6rem;
+}
+
+
