@@ -17,7 +17,7 @@ function popular_tabela() {
   // Inserir horas salvas
   if(localStorage.getItem('totalHoras')) {
     totalHoras = localStorage.getItem('totalHoras')
-    document.querySelector('#totalHoras').innerHTML = totalHoras
+    document.querySelector('#totalHoras').innerHTML = totalHoras+'h'
   }
 
   // Adicionar abreviações aos devidos horários
@@ -29,7 +29,7 @@ function popular_tabela() {
     const horario = item
       .split('(')[2]
       .substring(0, item.split('(')[2].length - 1)
-    alert(horario)
+    
     const horario_periodos = horario.substring(horario.length - 3)
 
     const horario_dias = horario.substring(0, horario.length - 3).split('')
