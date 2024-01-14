@@ -29,15 +29,18 @@ function removerMateria(e) {
     saved.push(item.innerHTML)
   }
 
+  
   localStorage.setItem('saved', saved)
 }
 
 function subtractTotalHours(hour) {
-  let totalHoras = Number(document.querySelector('#totalHoras').textContent)
+  let totalHoras = localStorage.getItem('totalHoras')
   totalHoras = totalHoras - hour
-  if (totalHoras == 0) {
+  if (totalHoras <= 0) {
     document.querySelector('#totalHoras').innerHTML = ''
+    localStorage.setItem('totalHoras', 0)
   } else {
-    document.querySelector('#totalHoras').innerHTML = totalHoras
+    document.querySelector('#totalHoras').innerHTML = totalHoras + 'h'
+    localStorage.setItem('totalHoras', totalHoras)
   }
 }
