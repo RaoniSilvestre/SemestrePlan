@@ -1,4 +1,6 @@
 function popular_tabela() {
+  
+  // Populando tabela 
   const tabela = document.getElementById('tabela_de_horarios')
 
   for (tr of tabela.children[0].children) {
@@ -7,17 +9,23 @@ function popular_tabela() {
     }
   }
 
+  // Verificação de horários salvos
   if (!localStorage.getItem('saved')) {
     return
   }
-  
 
+  // Inserir horas salvas
+  if(localStorage.getItem('totalHoras')) {
+    totalHoras = localStorage.getItem('totalHoras')
+    document.querySelector('#totalHoras').innerHTML = totalHoras
+  }
 
+  // Adicionar abreviações aos devidos horários
   const saved = localStorage.getItem('saved').split(',')
-  
+
   for (item of saved) {
     const abreviacao = item.split(' ')[0]
-    
+
     const horario = item
       .split('(')[2]
       .substring(0, item.split('(')[2].length - 1)
