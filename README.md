@@ -7,7 +7,8 @@ Ideia original de @LucasArruda, estou tentando corrigir um bug que não permite 
 
 ## To-do
 
-- [x] Adicionar total de horas
 - [x] Mudar cores
+- [x] Funcionalidade de mostrar horas
+- [ ] Adicionar total de horas ao localStorage 
 - [ ] Incluir formato DDT1234
 
