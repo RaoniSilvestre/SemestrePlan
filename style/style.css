@@ -101,7 +101,19 @@ table th, table td {
 }
 
 #divHoras {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
   margin-top: 6rem;
+  margin-right: 20px;
+  height: 2rem;
+  
+  background-color: #007BFF; 
+  color: #fff; 
+  padding: 5px;
+  border-radius: 5px; 
+  
 }
 
 

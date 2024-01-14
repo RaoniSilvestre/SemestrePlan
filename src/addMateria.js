@@ -86,7 +86,7 @@ function adicionarMateria(e) {
     totalHoras
   )
   
-  document.querySelector('#totalHoras').innerHTML = totalHours + 'h'
+  document.querySelector('#totalHoras').innerHTML ='Total de Horas: ' + totalHours + 'h'
 
   //Adicionar horário na tela
   node.innerHTML = `${abreviacao} - ${nome_da_materia} ${tamanho_disciplina} (${horario})`

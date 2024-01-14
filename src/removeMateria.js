@@ -37,10 +37,10 @@ function subtractTotalHours(hour) {
   let totalHoras = localStorage.getItem('totalHoras')
   totalHoras = totalHoras - hour
   if (totalHoras <= 0) {
-    document.querySelector('#totalHoras').innerHTML = ''
+    document.querySelector('#totalHoras').innerHTML = 'Total de horas: 0h'
     localStorage.setItem('totalHoras', 0)
   } else {
-    document.querySelector('#totalHoras').innerHTML = totalHoras + 'h'
+    document.querySelector('#totalHoras').innerHTML ='Total de horas: ' + totalHoras + 'h'
     localStorage.setItem('totalHoras', totalHoras)
   }
 }
