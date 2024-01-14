@@ -142,7 +142,6 @@ function validateMateria(horario) {
 }
 
 function selectHours(tamanho, horas) {
-  horas = Number(horas)
   switch (tamanho) {
     case 7:
       horas += 120
