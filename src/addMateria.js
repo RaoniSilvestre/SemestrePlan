@@ -2,7 +2,10 @@ function adicionarMateria(e) {
   e.preventDefault()
 
   const horario = document.getElementById('horario').value.toUpperCase()
-  let totalHoras = Number(document.querySelector('#totalHoras').textContent)
+  let totalHoras = Number(localStorage.getItem('totalHoras'))
+  if (isNaN(totalHoras)) {
+    totalHoras = 0
+  }
 
   if (!validateMateria(horario)) {
     return
@@ -77,13 +80,13 @@ function adicionarMateria(e) {
 
   const node = document.createElement('div')
 
-  //Selecionar tamanho da disciplina
+  // Selecionar tamanho da disciplina
   let { tamanho_disciplina, totalHours } = selectHours(
     horario.length,
     totalHoras
   )
-  document.querySelector('#totalHoras').innerHTML = totalHours
-
+  
+  document.querySelector('#totalHoras').innerHTML = totalHours + 'h'
 
   //Adicionar horário na tela
   node.innerHTML = `${abreviacao} - ${nome_da_materia} ${tamanho_disciplina} (${horario})`
@@ -100,8 +103,8 @@ function adicionarMateria(e) {
   for (item of legenda.children) {
     saved.push(item.innerHTML)
   }
-  
-  
+
+  localStorage.setItem('totalHoras', totalHours)
   localStorage.setItem('saved', saved)
 }
 
@@ -139,6 +142,7 @@ function validateMateria(horario) {
 }
 
 function selectHours(tamanho, horas) {
+  horas = Number(horas)
   switch (tamanho) {
     case 7:
       horas += 120
