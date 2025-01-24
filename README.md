@@ -1,16 +1,26 @@
-## Organizador de horários baseado no sistema da UFRN
+# Organizador de horários baseado no sistema da UFRN
 
 Programinha simples com js puro pra planejar seus horários na ufrn.
 
-Ideia original de @LucasArruda, estou tentando corrigir um bug que não permite a inserção de formatos do tipo `2N1234.`
+## Como rodar
 
-## Link
+Para rodar, basta copiar o código fonte e abrir o arquivo `index.html` com algum
+browser.
+
+Desse modo ele já vai funcionar nativamente, visto que não tem nenhuma
+dependência externa.
+
+## Link do projeto funcionando
 
 [https://raonisilvestre.github.io/SemestrePlan/](https://raonisilvestre.github.io/SemestrePlan/)
 
-## To-do
+## Participantes
 
-- [x] Mudar cores
-- [x] Funcionalidade de mostrar horas
-- [x] Adicionar total de horas ao localStorage 
-- [ ] Incluir formato DDT1234
+Ideia inicial de @LucasArruda, refatoração feita por @RaoniSilvestre e @thigoai.
+
+Especificamente, os alunos que participaram para atividade da terceira unidade
+de Boas Pŕaticas foram Raoni Silva e Thiago Freire.
+
+## Link da gravação
+
+
