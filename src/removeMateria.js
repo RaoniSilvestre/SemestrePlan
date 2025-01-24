@@ -26,7 +26,7 @@ function removerMateria(e) {
   }
 
   
-  localStorage.setItem('saved', saved)
+  localStorage.setItem('saved', materiasSalvas)
 }
 
 function obterDadosDoHorario(horarioSelecionado) {
