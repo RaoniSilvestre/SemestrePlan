@@ -20,10 +20,18 @@ function preencherTabela(tabelaDeHorarios) {
 
 function carregarTotalDeHoras() {
   const horasTotais = localStorage.getItem('totalHoras');
-  if (horasTotais) {
-    document.querySelector('#totalHoras').innerHTML =
-      'Total de horas: ' + horasTotais + 'h';
+  if (!horasTotais) {
+    console.warn('Nenhuma hora total foi encontrada no localStorage.');
+    return;
   }
+
+  if (isNaN(horasTotais)) {
+    console.error('Valor inválido para totalHoras:', horasTotais);
+    return;
+  }
+
+  document.querySelector('#totalHoras').innerHTML =
+    'Total de horas: ' + horasTotais + 'h';
 }
 
 function carregarHorariosSalvos() {
