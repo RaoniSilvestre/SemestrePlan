@@ -1,22 +1,20 @@
-
-
 function removerMateria(e) {
-  const target = e.target
+  const elementoSelecionado = e.target
 
-  const qtdHoras = target.innerHTML.split('(')[1].split('h')[0]
+  const quantidadeDeHoras = target.innerHTML.split('(')[1].split('h')[0]
 
-  const horario = target.innerHTML
+  const horarioDeAulas = elementoSelecionado.innerHTML
     .split('(')[2]
-    .substring(0, target.innerHTML.split('(')[2].length - 1)
+    .substring(0, elementoSelecionado.innerHTML.split('(')[2].length - 1)
 
-  const horario_periodos = horario.substring(horario.length - 3)
+  const periodosDoHorario = horarioDeAulas.substring(horarioDeAulas.length - 3)
 
-  const horario_dias = horario.substring(0, horario.length - 3).split('')
+  const diasDoHorario = horarioDeAulas.substring(0, horarioDeAulas.length - 3).split('')
 
-  subtractTotalHours(qtdHoras)
+  diminuirTotalDeHoras(quantidadeDeHorasRemovidas)
 
-  for (i in horario_dias) {
-    const elemento = document.getElementById(horario_dias[i] + horario_periodos)
+  for (i in diasDoHorario) {
+    const elemento = document.getElementById(diasDoHorario[i] + periodosDoHorario)
     elemento.style.backgroundColor = 'initial'
     elemento.innerHTML = elemento.id
   }
@@ -35,14 +33,14 @@ function removerMateria(e) {
   localStorage.setItem('saved', saved)
 }
 
-function subtractTotalHours(hour) {
-  let totalHoras = localStorage.getItem('totalHoras')
-  totalHoras = totalHoras - hour
-  if (totalHoras <= 0) {
+function diminuirTotalDeHoras(quantidadeDeHorasRemovidas) {
+  let totalDeHoras = localStorage.getItem('totalHoras')
+  totalDeHoras = totalDeHoras - quantidadeDeHorasRemovidas
+  if (totalDeHoras <= 0) {
     document.querySelector('#totalHoras').innerHTML = 'Total de horas: 0h'
     localStorage.setItem('totalHoras', 0)
   } else {
-    document.querySelector('#totalHoras').innerHTML ='Total de horas: ' + totalHoras + 'h'
-    localStorage.setItem('totalHoras', totalHoras)
+    document.querySelector('#totalHoras').innerHTML ='Total de horas: ' + totalDeHoras + 'h'
+    localStorage.setItem('totalHoras', totalDeHoras)
   }
 }
