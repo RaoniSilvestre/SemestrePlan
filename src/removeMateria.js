@@ -19,9 +19,9 @@ function removerMateria(e) {
 
   const materiasSalvas = []
 
-  const legenda = document.getElementById('legenda')
+  const listaDeMaterias = document.getElementById('legenda')
 
-  for (item of legenda.children) {
+  for (item of listaDeMaterias.children) {
     materiasSalvas.push(item.innerHTML)
   }
 
@@ -48,7 +48,9 @@ function obterDadosDoHorario(horarioSelecionado) {
 
 function diminuirTotalDeHoras(quantidadeDeHorasRemovidas) {
   let totalDeHoras = localStorage.getItem('totalHoras')
+  
   totalDeHoras = totalDeHoras - quantidadeDeHorasRemovidas
+
   if (totalDeHoras <= 0) {
     document.querySelector('#totalHoras').innerHTML = 'Total de horas: 0h'
     localStorage.setItem('totalHoras', 0)
