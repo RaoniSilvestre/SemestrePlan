@@ -1,36 +1,49 @@
 function removerMateria(e) {
-  const elementoSelecionado = e.target
+  const horarioSelecionado = e.target
 
-  const quantidadeDeHoras = target.innerHTML.split('(')[1].split('h')[0]
+  const dadosDoHoraio = obterDadosDoHorario(horarioSelecionado)
 
-  const horarioDeAulas = elementoSelecionado.innerHTML
-    .split('(')[2]
-    .substring(0, elementoSelecionado.innerHTML.split('(')[2].length - 1)
+  const { quantidadeDeHoras, diasDoHorario, periodosDoHorario } = dadosDoHoraio
+  
+  diminuirTotalDeHoras(quantidadeDeHoras)
 
-  const periodosDoHorario = horarioDeAulas.substring(horarioDeAulas.length - 3)
-
-  const diasDoHorario = horarioDeAulas.substring(0, horarioDeAulas.length - 3).split('')
-
-  diminuirTotalDeHoras(quantidadeDeHorasRemovidas)
-
-  for (i in diasDoHorario) {
-    const elemento = document.getElementById(diasDoHorario[i] + periodosDoHorario)
-    elemento.style.backgroundColor = 'initial'
-    elemento.innerHTML = elemento.id
+  for (const dia of diasDoHorario) {
+    const elemento = document.getElementById(dia + periodosDoHorario);
+    if (elemento) {
+      elemento.style.backgroundColor = 'initial';
+      elemento.innerHTML = elemento.id;
+    }
   }
 
-  target.remove()
+  horarioSelecionado.remove()
 
-  const saved = []
+  const materiasSalvas = []
 
   const legenda = document.getElementById('legenda')
 
   for (item of legenda.children) {
-    saved.push(item.innerHTML)
+    materiasSalvas.push(item.innerHTML)
   }
 
   
   localStorage.setItem('saved', saved)
+}
+
+function obterDadosDoHorario(horarioSelecionado) {
+  const quantidadeDeHoras = parseInt(
+    horarioSelecionado.innerHTML.split('(')[1].split('h')[0],
+    10
+  );
+
+  const horarioDeAulas = horarioSelecionado.innerHTML
+    .split('(')[2]
+    .substring(0, horarioSelecionado.innerHTML.split('(')[2].length - 1);
+
+  const periodosDoHorario = horarioDeAulas.substring(horarioDeAulas.length - 3);
+
+  const diasDoHorario = horarioDeAulas.substring(0, horarioDeAulas.length - 3).split('');
+
+  return { quantidadeDeHoras, diasDoHorario, periodosDoHorario };
 }
 
 function diminuirTotalDeHoras(quantidadeDeHorasRemovidas) {
