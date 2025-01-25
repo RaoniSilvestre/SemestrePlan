@@ -23,4 +23,4 @@ de Boas Pŕaticas foram Raoni Silva e Thiago Freire.
 
 ## Link da gravação
 
-
+[Vídeo no youtube](https://youtu.be/2Ji8kTNPszk)
